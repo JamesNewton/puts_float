@@ -21,7 +21,7 @@ unsigned char d;
   d = absq(digits);
   while (0 < d) {
     i = num/pow10[--d]; //pre-increment
-    if (!i) { //no digits found yet
+    if (d && !i) { //no digits found yet. d && for leading zero
       if (pad) putchar(pad); else digits--; //track digits (not) used
       }
     else { //found something
